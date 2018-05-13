@@ -1,0 +1,20 @@
+#create_div
+{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+#create_div td
+{
+	padding-bottom: 10px;
+}
+
+textarea
+{
+	resize: none;
+}
+
+#fullName_txt, #address_txt
+{
+	text-transform: capitalize;
+}

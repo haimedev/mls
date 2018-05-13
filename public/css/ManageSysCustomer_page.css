@@ -1,0 +1,77 @@
+#timeline_div
+{
+	width: 84%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	left: 18%;
+	padding: 0px;
+	padding-top: 30px;
+	padding-left: 10px;
+	margin-left: 2px;
+	background-color: white;
+}
+
+#notificationArea_div
+{
+	float: left;
+	width: 20%;
+	height: 400px;
+	margin-top: 30px;
+    overflow-y: auto;
+    border: 2px solid red;
+}
+
+#labelTest
+{
+	color: blue;
+}
+
+#timelineTable_div
+{
+	float: left;
+	width: 70%;
+	height: 400px;
+	margin-top: 30px;
+    overflow-y: auto;
+    border: 2px solid black;
+}
+
+#timelineTable_div td, th
+{
+	padding-right: 20px;
+}
+
+#timelineTable_div th
+{
+	border-bottom: 1px solid black;
+}
+
+#sysCustomer_tbl
+{ 
+	border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#sysCustomer_tbl tr:nth-child(even)
+{
+    background-color: #cdd4ff;
+}
+
+#sysCustomer_tbl tr:nth-child(odd)
+{
+    background-color: #ffffff;
+}
+
+#sysCustomer_tbl tr:hover
+{
+    background-color: #3c55ff;
+}
+
+#newAccount_btn
+{
+	position: absolute;
+}
