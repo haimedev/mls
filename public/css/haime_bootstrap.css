@@ -1,0 +1,103 @@
+/*
+    buttons
+*/
+.btn
+{
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(28, 205, 236);
+    border: none;
+    padding: 10px 20px 10px 20px;
+}
+
+
+/*
+section login
+*/
+.txt.login_input
+{
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(31, 30, 30);
+    font-size: 18px;
+}
+
+.btn.login
+{
+    width: 49%;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgb(28, 205, 236);
+    border: none;
+    padding: 10px 20px 10px 20px;
+}
+
+.table.login
+{
+    padding-top: 30px;
+}
+
+.table
+{
+    width: 100%;
+}
+
+.btn.one_line
+{
+    width: 100%;
+}
+
+textarea
+{
+    width: 100%;
+}
+/*
+endSection login
+*/
+
+/*
+section adminRegister
+*/
+.text.register
+{
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid black;
+}
+
+.text.register.two_line
+{
+    width: 42%;
+}
+
+.text.register.one_line
+{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.div.register {
+    padding: 20px;
+}
+
+.table.register td
+{
+    padding-bottom: 20px;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+/*
+endSection adminRegister
+*/

@@ -1,0 +1,23 @@
+#img_div
+{
+    width: 70%;
+    float: left;
+}
+
+#loginForm_div
+{
+    width: 27%;
+    margin-left: 10px;
+    height: 430px;
+    float: left;
+    background-color: white;
+    margin-top: 70px;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+.tr.bottom_space
+{
+    padding-bottom: 1em;
+}
