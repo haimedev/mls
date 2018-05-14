@@ -7,7 +7,7 @@
 
 @section('body')
     <div class="wrapper">
-    <label>Create new Admin</label>
+    <label>Create new Admins</label>
     <div class="div register">
         <form id="register_form" action="{{action('AdminController@store')}}" method="POST">
             <table class="table register">
