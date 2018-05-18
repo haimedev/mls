@@ -21,6 +21,8 @@ class CreateSystemAdminsTable extends Migration
             $table->string('sa_email', 30);
             $table->string('sa_username', 20);
             $table->string('sa_password', 20);
+            $table->string('sa_password_confirm', 20);
+            $table->string('sa_nickname', 20);
             $table->string('sa_active', 1)->default('1');
             //$table->timestamps();
         });

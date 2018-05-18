@@ -1,6 +1,6 @@
 #img_div
 {
-    width: 70%;
+    width: 67%;
     float: left;
 }
 
@@ -8,11 +8,11 @@
 {
     width: 27%;
     margin-left: 10px;
-    height: 430px;
+    height: 410px;
     float: left;
     background-color: white;
-    margin-top: 70px;
-    padding: 10px;
+    margin-top: 10px;
+    padding: 20px;
     border-radius: 5px;
     
 }
