@@ -8,8 +8,16 @@
 	<div id="img_div">
 		<img src="{{asset('image/mls_background.png')}}">
 	</div>
+	@if(Session::has("indexMsg"))
+		<div class="div success_msg">
+		<label class="label registered message">{{Session::get("indexMsg")}}</label>
+		<?php 
+			Session::forget("indexMsg");
+		?>
+	@endif
+	</div>
 	<div id="loginForm_div">
-		<form method="post" action="{{action('AdminController@index')}}">
+		<form method="post" action="/sys_admin/auth">
 			<table class="table login">
 				<tr>
 					<td><input type="text" id="userName_txt" name="userName_txt" class="txt login_input" placeholder="Username..." required/></td>
@@ -42,7 +50,7 @@
 					</td>
                 </tr>
 				<tr>
-					<td><textarea rows="4" class="textarea"></textarea></td>
+					<td><textarea rows="4" class="textarea resize_none"></textarea></td>
 				</tr>
 				<tr>
 					<td>
@@ -50,6 +58,7 @@
 					</td>
 				</tr>
 			</table>
+            <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 		</form>
 	</div>
 @endsection

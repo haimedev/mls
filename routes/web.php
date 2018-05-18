@@ -12,4 +12,6 @@
 */
 
 Route::get('/', 'PageController@index');
+Route::post("sys_admin/auth", "AdminController@auth");
 Route::resource('sys_admin', 'AdminController');
+Route::resource("client", "ClientController");

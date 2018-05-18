@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
 
-class PageController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +13,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        //if admin is logged in
-        if(Session::has("loggedAdmin") && Session::get("loggedAdmin") != "")
-        {
-            return view("page.home");
-        }
-        else
-        {
-            return view("page.index");
-        }
+        //
     }
 
     /**
@@ -32,7 +23,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view("client.create");
     }
 
     /**

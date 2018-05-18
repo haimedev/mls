@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SystemAdmin;
+use Session;
 
 class AdminController extends Controller
 {
@@ -12,9 +13,39 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+
+    public function auth(Request $request)
     {
-        
+        //return "user:".$request->userName_txt." pass:".$request->passWord_txt;
+        //return "auth";
+        $_sysAdmin = SystemAdmin::where([
+                ["sa_username","=",$request->userName_txt],
+                ["sa_password","=",$request->passWord_txt]
+            ])->get();
+
+        //if login attempt is successful 
+        if($_sysAdmin->count()>0)
+        {
+            foreach($_sysAdmin as $_tempSysAdmin)
+            {
+                Session::put("loggedAdmin", $_tempSysAdmin->sa_nickname);
+                echo "1";
+                break;
+            }
+
+            echo "2";
+            return redirect("/");
+        }
+        else
+        {
+            Session::put("indexMsg","Invalid account!");
+            return redirect("/");
+        }
+    }
+    public function index()
+    {
+        $sysAdmin = SystemAdmin::orderBy("sa_id","desc")->get();
+        return view("sys_admin.index")->with("sysAdmin", $sysAdmin);
     }
 
     /**
@@ -35,13 +66,19 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $_systemAdmin = new SystemAdmin();
+        $_systemAdmin = new SystemAdmin;
         $_systemAdmin->timestamps = false;
-        $_systemAdmin->sa_firstname = $request->
-        $_systemAdmin->sa_lastname = $request->
-        $_systemAdmin->sa_email = $request->
-        $_systemAdmin->sa_username = $request->
-        $_systemAdmin->sa_password = $request->
+        $_systemAdmin->sa_firstname = $request->firstName_txt;
+        $_systemAdmin->sa_lastname = $request->lastName_txt;
+        $_systemAdmin->sa_email = $request->email_txt;
+        $_systemAdmin->sa_username = $request->username_txt;
+        $_systemAdmin->sa_password = $request->password_txt;
+        $_systemAdmin->sa_password_confirm = $request->passwordConfirm_txt;
+        $_systemAdmin->sa_nickname = $request->nickName_txt;
+        $_systemAdmin->save();
+        Session::put("indexMsg", "Successfully Registered!");
+        //Session::put("adminName", $request->nickName_txt);
+        return redirect('/');
     }
 
     /**
